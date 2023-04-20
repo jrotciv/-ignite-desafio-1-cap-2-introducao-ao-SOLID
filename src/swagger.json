@@ -204,13 +204,13 @@
                 "description": "Transforms a user into admin based on id",
                 "parameters": [
                     {
-                    "in": "path",
-                    "name": "user_id",
-                    "required": true,
-                    "schema": {
+                        "in": "path",
+                        "name": "user_id",
+                        "required": true,
+                        "schema": {
                         "type": "string"
-                    },
-                    "description": "The user id"
+                        },
+                        "description": "The user id"
                     }
                 ],
                 "responses": {
