@@ -44,6 +44,78 @@
                     }
                 }
             }
+        },
+        "/users/{user_id}/admin": {
+            "patch": {
+                "tags": ["users"],
+                "summary": "Turns a user into an administrator",
+                "description": "Transforms a user into admin based on id",
+                "parameters": [
+                    {
+                    "in": "path",
+                    "name": "user_id",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "The user id"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Turned user into admin",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "example": "b3c4e39e-891a-4d69-8b95-205005245287"
+                                        },
+                                        "admin": {
+                                            "type": "boolean",
+                                            "value": true
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "joao victor"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "joaovictorsouza1034@gmail.com"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2023-04-20T05:01:50.826Z"
+                                        },
+                                        "update_at": {
+                                            "tyep": "string",
+                                            "example": "2023-04-20T05:06:08.754Z"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User doesn't exists",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "User doesn't exists"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
