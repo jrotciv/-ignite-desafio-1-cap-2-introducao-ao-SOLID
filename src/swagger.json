@@ -113,8 +113,67 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#components/schemas/User"
-                                    }                                   
+                                        "oneOf": [
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "example": "b3c4e39e-891a-4d69-8b95-205005245287"
+                                                    },
+                                                    "admin": {
+                                                        "type": "boolean",
+                                                        "example": false
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "joao victor"
+                                                    },
+                                                    "email": {
+                                                        "type": "string",
+                                                        "example": "joaovictorsouza1034@gmail.com"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2023-04-20T05:01:50.826Z"
+                                                    },
+                                                    "update_at": {
+                                                        "tyep": "string",
+                                                        "example": "2023-04-20T05:01:50.826Z"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "example": "56085687-867d-4513-85c6-3f77e4409311"
+                                                    },
+                                                    "admin": {
+                                                        "type": "boolean",
+                                                        "example": true
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "victor"
+                                                    },
+                                                    "email": {
+                                                        "type": "string",
+                                                        "example": "victor@gmail.com"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2023-04-20T22:29:18.314Z"
+                                                    },
+                                                    "update_at": {
+                                                        "tyep": "string",
+                                                        "example": "2023-04-20T22:31:56.228Z"
+                                                    }
+                                                }
+                                            }
+                                          ]
+                                      }                                   
                                 }
                             }
                         }
@@ -278,39 +337,6 @@
                                 }
                             }
                         }
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "schemas": {
-            "User": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "example": "b3c4e39e-891a-4d69-8b95-205005245287"
-                    },
-                    "admin": {
-                        "type": "boolean",
-                        "example": false
-                    },
-                    "name": {
-                        "type": "string",
-                        "example": "joao victor"
-                    },
-                    "email": {
-                        "type": "string",
-                        "example": "joaovictorsouza1034@gmail.com"
-                    },
-                    "created_at": {
-                        "type": "string",
-                        "example": "2023-04-20T05:01:50.826Z"
-                    },
-                    "update_at": {
-                        "tyep": "string",
-                        "example": "2023-04-20T05:01:50.826Z"
                     }
                 }
             }
