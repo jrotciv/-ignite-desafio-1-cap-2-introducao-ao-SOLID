@@ -89,6 +89,53 @@
                         }
                     }
                 }
+            },
+            "get": {
+                "tags": ["users"],
+                "summary": "Lists all users",
+                "description": "Lists all users (only for admins)",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "user_id",
+                        "description": "The admin user id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }                  
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#components/schemas/User"
+                                    }                                   
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "User doesn't exists or user isn't admin",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "User isn't admin"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "/users/{user_id}/admin": {
@@ -231,6 +278,39 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "b3c4e39e-891a-4d69-8b95-205005245287"
+                    },
+                    "admin": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "joao victor"
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "joaovictorsouza1034@gmail.com"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "example": "2023-04-20T05:01:50.826Z"
+                    },
+                    "update_at": {
+                        "tyep": "string",
+                        "example": "2023-04-20T05:01:50.826Z"
                     }
                 }
             }
