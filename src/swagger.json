@@ -1,0 +1,11 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentação do projeto com SOLID",
+        "description": "Documentação do projeto para praticar aplicação do SOLID",
+        "version": "1.0.0",
+        "contact": {
+            "email": "joaovictorsouza1034@gmail.com"
+        }
+    }
+}
